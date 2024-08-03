@@ -2,13 +2,19 @@ html {
     scroll-behavior: smooth;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body, html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
     color: #333;
-    line-height: 1.6;
-    background-image: url('fundo.png');
+    line-height: 1.5;
+    background-image: url('imgs/fundo.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -63,36 +69,25 @@ header .cta-button {
     text-decoration: none;
 }
 
-.introducao-content {
+.section {
     background-color: #ffffff78;
-    text-align: center;
+    padding: 80px 0;
+}
+
+.section-content {
     display: flex;
     align-items: center;
     gap: 20px;
-    padding-top: 80px;
-}
-
-.introducao-content .imagem img {
-    max-width: 50%;
-    height: auto;
-}
-
-.introducao-content .texto {
-    max-width: 60%;
-}
-
-#services, #testimonials, #blog {
-    padding: 30px 0;
     text-align: center;
 }
 
-.service-item, .testimonial-item, .blog-item {
-    margin-bottom: 20px;
+.section-content .imagem img {
+    height: auto;
 }
 
-#services .service-item, #testimonials .testimonial-item, #blog .blog-item {
-    margin: 20px auto;
-    width: 90%;
+.section-content .texto {
+    max-width: 80%;
+    text-align: left;
 }
 
 footer {
@@ -123,7 +118,65 @@ footer p {
     background-color: #fff;
 }
 
-/* responsividade - marcação pra achar fácil--> ------------------------------------------------------------------------------------------- */
+/* responsividade - marcação pra se achar facil marcelo animal ------------------------------ */
+
+@media (max-width: 1024px) {
+
+    body, html{
+        font-size: 30px;
+    }
+
+    .container {
+        width: 90%;
+    }
+
+    header, header nav {
+        float: none;
+        text-align: center;
+    }
+
+    header ul {
+        text-align: center;
+    }
+
+    header li {
+        display: block;
+        padding: 10px 0;
+    }
+
+    header .hamburger-icon {
+        display: block;
+    }
+
+    header nav {
+        display: none;
+    }
+
+    header nav.active {
+        display: block;
+    }
+
+    .section-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .section-content .imagem img {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    .section-content .texto {
+        max-width: 80%;
+        text-align: justify;
+    }
+
+    .section-content .texto h2, 
+    .section-content .texto h3 {
+        text-align: center;
+    }
+
+}
 
 @media (max-width: 768px) {
     .container {
@@ -156,24 +209,29 @@ footer p {
         display: block;
     }
 
-    .introducao-content {
+    .section-content {
         flex-direction: column;
         text-align: center;
-        padding-top: 80px;
     }
 
-    .introducao-content .imagem img, .introducao-content .texto {
+    .section-content .imagem img, .section-content .texto {
         max-width: 100%;
         padding: 10px;
     }
 
-    .service-item, .testimonial-item, .blog-item {
-        margin: 20px auto;
-        width: 100%;
+    .section-content .texto h2, 
+    .section-content .texto h3 {
+        text-align: center;
     }
+
 }
 
 @media (max-width: 480px) {
+
+    body,html{
+        font-size: 20px;
+    }
+
     .container {
         width: 100%;
     }
@@ -186,12 +244,17 @@ footer p {
         margin-top: 20px;
     }
 
-    .introducao-content .imagem img {
+    .section-content .imagem img {
+        width: 100%;
         margin: 0 auto;
     }
 
-    .service-item, .testimonial-item, .blog-item {
-        margin: 10px auto;
-        width: 100%;
+    .section-content .texto {
+        text-align: justify;
+    }
+
+    .section-content .texto h2, 
+    .section-content .texto h3 {
+        text-align: center;
     }
 }
